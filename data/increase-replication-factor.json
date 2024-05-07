@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "partitions": [
+    {
+      "topic": "realtime-class",
+      "partition": 0,
+      "replicas": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "topic": "realtime-class",
+      "partition": 1,
+      "replicas": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "topic": "realtime-class",
+      "partition": 2,
+      "replicas": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "topic": "realtime-class",
+      "partition": 3,
+      "replicas": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
