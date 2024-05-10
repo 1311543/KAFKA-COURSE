@@ -1,0 +1,16 @@
+{
+    "schema": {
+        "type": "record",
+        "name": "Transaction",
+        "fields": [
+            { "name": "card_number", "type": "string" },
+            { "name": "transaction_type", "type": "string" },
+            { "name": "transaction_date", "type": "string" },
+            { "name": "phone_number", "type": "string" },
+            { "name": "amount", "type": "int" },
+            { "name": "personaId", "type": "string" }
+        ]
+    },
+    "subject": "file-sink-test-value",
+    "version": 1
+}

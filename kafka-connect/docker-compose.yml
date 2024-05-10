@@ -13,6 +13,7 @@ services:
       ZOOKEEPER_SERVERS: zoo1:2888:3888
     volumes:
       - ./data:/tmp/data
+    user: root
 
   kafka1:
     image: confluentinc/cp-kafka:latest-ubi8
@@ -33,6 +34,7 @@ services:
       - ./data:/tmp/data
     depends_on:
       - zoo1
+    user: root
 
   kafka2:
     image: confluentinc/cp-kafka:latest-ubi8
@@ -53,6 +55,7 @@ services:
       - ./data:/tmp/data
     depends_on:
       - zoo1
+    user: root
 
   kafka3:
     image: confluentinc/cp-kafka:latest-ubi8
@@ -73,3 +76,4 @@ services:
       - ./data:/tmp/data
     depends_on:
       - zoo1
+    user: root

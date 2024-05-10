@@ -27,15 +27,6 @@
         2,
         3
       ]
-    },
-    {
-      "topic": "realtime-class",
-      "partition": 3,
-      "replicas": [
-        1,
-        2,
-        3
-      ]
     }
   ]
 }

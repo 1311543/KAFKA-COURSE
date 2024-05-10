@@ -48,7 +48,7 @@ object OnlyTestProducerClient {
       broadList.foreach {
         message => {
           limit += 1
-          Thread.sleep(1500)
+//          Thread.sleep(1000)
           val jsonRecord: JsonObject = BaseFunctions.getJson(message)
           jsonRecord.addProperty("transaction_date",
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now))
@@ -58,7 +58,7 @@ object OnlyTestProducerClient {
           println(jsonRecord)
           println(limit)
 
-          val record: ProducerRecord[String, String] = new ProducerRecord[String, String](inputTopic, jsonRecord.toString)
+          val record: ProducerRecord[String, String] = new ProducerRecord[String, String](inputTopic,jsonRecord.toString)
           record.headers.add(new RecordHeader("channel", "SH".getBytes))
           record.headers.add(new RecordHeader("time", "2019-08-24T14:15:22Z".getBytes))
           record.headers.add(new RecordHeader("scopes", "SMS".getBytes))

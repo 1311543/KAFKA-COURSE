@@ -1,30 +1,5 @@
 https://jsonformatter.org/json-stringify-online
-WINDOW
-curl -H "Content-Type: application/json" -X POST http://localhost:8083/connectors -d "{\"name\": \"file-sink-test\",\"config\": {\"connector.class\": \"FileStreamSink\",\"tasks.max\": \"1\",\"file\": \"C:kafka-logs/file-sink-test.txt\",\"topics\": \"file-sink-test\",\"name\": \"file-sink-test\"}}"
-curl -H "Content-Type: application/json" -X POST https://api.powerbi.com/beta/5d93ebcc-f769-4380-8b7e-289fc972da1b/datasets/7265d43e-1d8c-490f-a372-af79a67a0d7e/rows?key=uMMWfIke7bDqFmTqkdkh7qhcCiwybQ1yqlRQkUYidRRGYd2RAjz4CWUHGb%2BOy21QQVYGrA5xog28OV%2BnovWdEg%3D%3D -d "{\"name\": \"file-sink-test\",\"config\": {\"connector.class\": \"FileStreamSink\",\"tasks.max\": \"1\",\"file\": \"C:kafka-logs/file-sink-test.txt\",\"topics\": \"file-sink-test\",\"name\": \"file-sink-test\"}}"
 
-
-curl -H "Content-Type: application/json" -X POST https://api.powerbi.com/beta/5d93ebcc-f769-4380-8b7e-289fc972da1b/datasets/7265d43e-1d8c-490f-a372-af79a67a0d7e/rows?key=uMMWfIke7bDqFmTqkdkh7qhcCiwybQ1yqlRQkUYidRRGYd2RAjz4CWUHGb%2BOy21QQVYGrA5xog28OV%2BnovWdEg%3D%3D -d "{\"name\": \"file-sink-test\",\"config\": {\"connector.class\": \"FileStreamSink\",\"tasks.max\": \"1\",\"file\": \"C:kafka-logs/file-sink-test.txt\",\"topics\": \"file-sink-test\",\"name\": \"file-sink-test\"}}"
-
-
-curl -H "Content-Type: application/json" -X POST https://api.powerbi.com/beta/c4a66c34-2bb7-451f-8be1-b2c26a430158/datasets/d7888ac7-012d-4861-a3bd-c5c75f4e9ccd/rows?key=78W8lYzTYK6wT26Oa5HeZqVbV4Pb%2Fl6LxEtl0ixyOL88Xjpctpf%2Be83oQKCXi4MPCRE7paufv0wynsN1jLBC%2Fw%3D%3D -d "{\"card_number\":\"65979894\",\"transaction_type\":\"prestamos\",\"transaction_date\":\"2020-07-23 20:51:56.345\",\"phone_number\":\"940023516\",\"amount\":9789.00}"
-
-java -Dbrokers=localhost:9092 -Dsleep=1 -Dthreads=1 -DlimitMessages=1000 -DbroadPath=data-streams.txt -DinputTopic=mx-transaction-input -jar Kstream-Master-Class.jar
-java -Dbrokers=localhost:9092 -Dsleep=1 -Dthreads=1 -DlimitMessages=1000 -DbroadPath=data-streams.txt -DinputTopic=mx-transaction-inpu3 -jar Kstream-Master-Class.jar
-
-
-{"name":"file-sink-test",
-"config":{"connector.class":"FileStreamSink","tasks.max":"1","file":"/home/appuser/file-sink-test.txt","topics":"file-sink-test","name":"file-sink-test"},"tasks":[],"type":"sink"}
-
-
-kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic outputtopic --group test
-
-RawDomesticRetailSalesTopic
-kafka-topics.bat --zookeeper localhost:2181 --topic RawDomesticRetailSalesTopic --create --replication-factor 1 --partitions 1
-kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic RawDomesticRetailSalesTopic
-
-kafka-console-consumer.bat --bootstrap-server kafka1:19092,kafka2:19093,kafka3:19094 --topic RawDomesticRetailSalesTopic
-kafka-console-producer --broker-list kafka1:19092,kafka2:19093,kafka3:19094 --topic file-sink-test
 confluent:
 /usr/bin/kafka-topics --zookeeper zookeeper:2181 --topic com-bcp-shcl-notification-salary-advance --create --replication-factor 5 --partitions 5
 /usr/bin/kafka-topics --zookeeper zookeeper:2181 --topic com-bcp-shcl-notification-salary-advance --describe

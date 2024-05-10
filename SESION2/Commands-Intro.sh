@@ -20,3 +20,5 @@ java -DinputTopic=realtime-class -Dbrokers=kafka1:19092,kafka2:19093,kafka3:1909
 
 # JAR EXECUTION MASSIVE MESSAGE MULTI THREAD
 java -Dbrokers=kafka1:19092,kafka2:19093,kafka3:19094 -Dsleep=1 -Dthreads=3 -DlimitMessages=100 -DbroadPath=/tmp/data/data-streams.txt -DinputTopic=realtime-class-sesion3 -jar /tmp/data/MasiveMessageProductorClient.jar
+
+docker system prune -a --volumes --filter "label=io.confluent.docker"
