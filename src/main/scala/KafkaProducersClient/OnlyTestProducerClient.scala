@@ -10,6 +10,7 @@ import javafx.scene.AccessibleRole
 import org.apache.kafka.clients.producer.{Callback, KafkaProducer, ProducerConfig, ProducerRecord, RecordMetadata}
 import org.apache.kafka.common.header.internals.RecordHeader
 import org.apache.kafka.common.serialization.StringSerializer
+import org.apache.kafka.connect.json.JsonSerializer
 
 import java.util.UUID.randomUUID
 

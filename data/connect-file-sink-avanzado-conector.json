@@ -1,7 +1,7 @@
 {
     "name": "file-sink-test",
     "config": {
-        "connector.class": "FileStreamSink",
+        "connector.class": "org.apache.kafka.connect.file.FileStreamSinkConnector",
         "tasks.max": "2",
         "file": "/tmp/data/file-sink-test.txt",
         "topics": "file-sink-test",
@@ -11,20 +11,10 @@
         "key.converter.schemas.enable": "true",
         "value.converter.schemas.enable": "true",
 
-        "transforms": "AddSourceField,RenamePersonaId,FilterPrestamos",
+        "transforms": "AddSourceField",
         "transforms.AddSourceField.type": "org.apache.kafka.connect.transforms.InsertField$Value",
         "transforms.AddSourceField.static.field": "source",
         "transforms.AddSourceField.static.value": "kafka-connect",
-
-        "transforms.RenamePersonaId.type": "org.apache.kafka.connect.transforms.ReplaceField$Value",
-        "transforms.RenamePersonaId.renames": "personaId:person_id",
-
-        "transforms.FilterPrestamos.type": "org.apache.kafka.connect.transforms.Filter$Value",
-        "transforms.FilterPrestamos.predicate": "IsPrestamos",
-        "predicates": "IsPrestamos",
-        "predicates.IsPrestamos.type": "org.apache.kafka.connect.transforms.predicates.RecordValueMatch",
-        "predicates.IsPrestamos.field": "transaction_type",
-        "predicates.IsPrestamos.pattern": "prestamos",
 
         "errors.retry.timeout": "60000",
         "errors.retry.delay.max.ms": "5000",

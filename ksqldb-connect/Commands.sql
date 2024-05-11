@@ -116,7 +116,7 @@ SELECT * FROM pageviews_per_region_89
   WHERE userid = 'User_1' AND gender='FEMALE' AND regionid='Region_9';
 
 
-SHOW STREAMS
+SHOW STREAMS;
 SHOW TABLES;
 Mostrar Consultas Persistentes:
 SHOW QUERIES;
@@ -126,3 +126,6 @@ DESCRIBE account_balances;
 Paso 8: Eliminar Streams y Tablas
 DROP STREAM purchases_stream;
 DROP TABLE account_balances;
+
+
+https://docs.confluent.io/platform/current/platform-quickstart.html#quickstart

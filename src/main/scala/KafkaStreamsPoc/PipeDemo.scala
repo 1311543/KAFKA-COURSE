@@ -14,7 +14,6 @@ object PipeDemo extends InitClass {
 
     val builder: StreamsBuilder = new StreamsBuilder
     val records: KStream[String, String] = builder.stream[String, String](inputTopic)
-    System.out.println(records)
 
     records.peek((key,value) => println(key,value))
     records.to(outputTopic)
