@@ -1,4 +1,4 @@
-https://jsonformatter.org/json-stringify-online
+ttps://jsonformatter.org/json-stringify-online
 
 {
   "type": "record",

@@ -33,6 +33,7 @@ object WordCountKstreams extends InitClass {
       .count(Named.as("CountView"))(Materialized.as("counts-store-mx")) // Setting state store name*(Implicit Convertion)
     // The result is written into a local `KeyValueStore` (which is basically an ever-updating materialized view)
 //      .count()(Materialized.`with`(Serdes.String, Serdes.Long)) // Internal name, typed convertions
+    wordCount3.toStream.peek((key,value) => println(value))
 
     wordCount3.toStream.to(outputTopic)
 

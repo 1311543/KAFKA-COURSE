@@ -12,7 +12,7 @@ class ThreadProducerClient(topic: String,
   override def run(): Unit = {
     val reader = new ReaderSource
 //    val broadList: Array[String] = reader.readBroad(broadPath)
-  val broadList: Array[String] = reader.readBroad("C:\\workspace\\workspace\\ROCK-NOBLEPROG-KAFKA\\src\\main\\resources\\data-streams.txt")
+  val broadList: Array[String] = reader.readBroad("/tmp/data/data-streams.txt")
     var limit = 0
     val until = limitMessages.toInt
     broadList.foreach(println(_))

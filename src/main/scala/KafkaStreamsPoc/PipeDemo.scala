@@ -12,12 +12,11 @@ object PipeDemo extends InitClass {
   def main(args: Array[String]): Unit = {
     val properties = new KstreamProperties(brokers)
 
-
     val builder: StreamsBuilder = new StreamsBuilder
     val records: KStream[String, String] = builder.stream[String, String](inputTopic)
     System.out.println(records)
 
-//    records.peek((key,value) => println(key,value))
+    records.peek((key,value) => println(key,value))
     records.to(outputTopic)
 
     val topology: Topology = builder.build()
@@ -25,7 +24,8 @@ object PipeDemo extends InitClass {
 
     val streams: KafkaStreams = new KafkaStreams(
       builder.build(),
-      properties.getKstreamProperties("Pipe"))
+      properties.getKstreamProperties("Pipe")
+    )
 
     streams.start()
     sys.ShutdownHookThread {
